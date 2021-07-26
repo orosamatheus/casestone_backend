@@ -1,0 +1,7 @@
+{
+  "name": "casestone-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Matheus Rosa <matheusrosa.la@gmail.com>",
+  "license": "MIT"
+}
