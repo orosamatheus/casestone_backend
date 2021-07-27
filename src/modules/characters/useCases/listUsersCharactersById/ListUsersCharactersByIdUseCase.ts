@@ -12,7 +12,9 @@ class ListUsersCharactersByIdUseCase {
 
     async execute(user_id: string): Promise<UserCharacters[]> {
         const usersCharacters =
-            await this.usersCharactersRepository.findByUserId(user_id);
+            await this.usersCharactersRepository.listCharactersByUserId(
+                user_id
+            );
 
         return usersCharacters;
     }

@@ -19,7 +19,7 @@ class UsersCharactersRepository implements IUsersCharactersRepository {
 
         await this.repository.save(userCharacter);
     }
-    async findByUserId(user_id: string): Promise<UserCharacters[]> {
+    async listCharactersByUserId(user_id: string): Promise<UserCharacters[]> {
         const userCharacters = this.repository.find({ user_id });
 
         return userCharacters;

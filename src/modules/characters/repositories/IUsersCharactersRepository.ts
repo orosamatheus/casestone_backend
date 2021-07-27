@@ -3,7 +3,7 @@ import { UserCharacters } from "../entities/UserCharacters";
 
 interface IUsersCharactersRepository {
     create({ character_id, user_id }: ICreateUserCharacterDTO): Promise<void>;
-    findByUserId(user_id: string): Promise<UserCharacters[]>;
+    listCharactersByUserId(user_id: string): Promise<UserCharacters[]>;
 }
 
 export { IUsersCharactersRepository };
