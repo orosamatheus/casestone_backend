@@ -14,6 +14,7 @@ class UserComics {
     @JoinColumn({ name: "user_id" })
     user: User;
 
+    @Column()
     user_id: string;
 }
 
