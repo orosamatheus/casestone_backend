@@ -14,9 +14,13 @@ class UpdateUserUseCase {
 
     async execute(
         id: string,
-        { name, email, password }: IUpdateUserDTO
+        { name, email, password, passwordConfirm }: IUpdateUserDTO
     ): Promise<void> {
         const userExists = await this.usersRepository.findById(id);
+
+        if (password !== passwordConfirm) {
+            throw new AppError("Password error");
+        }
 
         if (!userExists) {
             throw new AppError("User does not Exists");
