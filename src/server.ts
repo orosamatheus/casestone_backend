@@ -1,3 +1,4 @@
+import cors from "cors";
 import express, { Request, Response, NextFunction } from "express";
 
 import "reflect-metadata";
@@ -13,6 +14,12 @@ const app = express();
 
 app.use(express.json());
 
+const allowedOrigins = ["http://localhost:3333"];
+
+const options: cors.CorsOptions = {
+    origin: allowedOrigins,
+};
+
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
         if (err instanceof AppError) {
@@ -27,6 +34,8 @@ app.use(
         });
     }
 );
+
+app.use(cors(options));
 
 app.listen(3333, () => console.log("Case stone server is running"));
 
