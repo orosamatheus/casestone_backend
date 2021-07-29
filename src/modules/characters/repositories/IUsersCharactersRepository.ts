@@ -8,6 +8,7 @@ interface IUsersCharactersRepository {
         character_id,
         user_id,
     }: ICreateUserCharacterDTO): Promise<UserCharacters>;
+    delete(UserCharacters: UserCharacters): Promise<void>;
 }
 
 export { IUsersCharactersRepository };

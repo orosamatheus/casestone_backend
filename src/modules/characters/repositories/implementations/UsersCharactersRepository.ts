@@ -35,6 +35,12 @@ class UsersCharactersRepository implements IUsersCharactersRepository {
 
         return userCharacters;
     }
+
+    async delete(UserCharacters: UserCharacters): Promise<void> {
+        const userCharacter = UserCharacters;
+
+        await this.repository.remove(userCharacter);
+    }
 }
 
 export { UsersCharactersRepository };

@@ -1,11 +1,10 @@
 import { inject, injectable } from "tsyringe";
 
-import { AppError } from "../../../../errors/AppError";
 import { ICreateUserCharacterDTO } from "../../dto/ICreateUserCharacterDto";
 import { IUsersCharactersRepository } from "../../repositories/IUsersCharactersRepository";
 
 @injectable()
-class CreateUsersCharactersUseCase {
+class DeleteUsersCharactersUseCase {
     constructor(
         @inject("UsersCharactersRepository")
         private usersCharactersRepository: IUsersCharactersRepository
@@ -23,15 +22,8 @@ class CreateUsersCharactersUseCase {
 
         console.log(userCharacterExists);
 
-        if (userCharacterExists) {
-            throw new AppError("Esse character já foi favoritado!");
-        }
-
-        await this.usersCharactersRepository.create({
-            character_id,
-            user_id,
-        });
+        await this.usersCharactersRepository.delete(userCharacterExists);
     }
 }
 
-export { CreateUsersCharactersUseCase };
+export { DeleteUsersCharactersUseCase };
