@@ -31,6 +31,11 @@ class UsersComicsRepository implements IUsersComicsRepository {
 
         return userComics;
     }
+    async delete(UserComics: UserComics): Promise<void> {
+        const userComic = UserComics;
+
+        await this.repository.remove(userComic);
+    }
 }
 
 export { UsersComicsRepository };

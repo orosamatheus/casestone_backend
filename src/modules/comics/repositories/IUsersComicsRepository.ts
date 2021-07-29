@@ -8,6 +8,7 @@ interface IUsersComicsRepository {
         comic_id,
         user_id,
     }: ICreateUserComicDTO): Promise<UserComics>;
+    delete(UserComics: UserComics): Promise<void>;
 }
 
 export { IUsersComicsRepository };
