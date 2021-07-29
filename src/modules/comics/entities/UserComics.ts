@@ -1,6 +1,7 @@
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 import { User } from "../../accounts/entities/User";
+import { Comic } from "./Comic";
 
 @Entity("users_comics")
 class UserComics {
@@ -16,6 +17,8 @@ class UserComics {
 
     @Column()
     user_id: string;
+
+    comic: Comic;
 }
 
 export { UserComics };
