@@ -24,6 +24,17 @@ class UsersCharactersRepository implements IUsersCharactersRepository {
 
         return userCharacters;
     }
+
+    async findCharacterByUserId({
+        character_id,
+        user_id,
+    }: ICreateUserCharacterDTO): Promise<UserCharacters> {
+        const userCharacters = this.repository.findOne({
+            where: { user_id, character_id },
+        });
+
+        return userCharacters;
+    }
 }
 
 export { UsersCharactersRepository };

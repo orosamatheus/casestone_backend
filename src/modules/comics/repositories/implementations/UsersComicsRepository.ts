@@ -21,6 +21,16 @@ class UsersComicsRepository implements IUsersComicsRepository {
 
         return userComics;
     }
+    async findComicByUserId({
+        comic_id,
+        user_id,
+    }: ICreateUserComicDTO): Promise<UserComics> {
+        const userComics = this.repository.findOne({
+            where: { user_id, comic_id },
+        });
+
+        return userComics;
+    }
 }
 
 export { UsersComicsRepository };
