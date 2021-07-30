@@ -5,5 +5,10 @@ module.exports = {
     "entities": ["dist/modules/**/entities/*.js"],
     "cli": {
       "migrationsDir": "./src/database/migrations"
-    }
+    },
+    "extra": {
+        "ssl": {
+          "rejectUnauthorized": false
+        }
+      }
   }
