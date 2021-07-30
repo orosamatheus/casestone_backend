@@ -4,5 +4,5 @@
 /DockerFile
 /docker-compose.yml
 /dist
-/yarn.lock
+
 /yarn-error.log
