@@ -3,3 +3,4 @@
 /.env
 /DockerFile
 /docker-compose.yml
+/dist

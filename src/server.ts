@@ -1,4 +1,5 @@
 import cors from "cors";
+import dotenv from "dotenv";
 import express, { Request, Response, NextFunction } from "express";
 
 import "reflect-metadata";
@@ -12,13 +13,9 @@ import "./shared/container";
 
 const app = express();
 
+dotenv.config();
+
 app.use(express.json());
-
-const allowedOrigins = ["http://localhost:3333"];
-
-const options: cors.CorsOptions = {
-    origin: allowedOrigins,
-};
 
 app.use(
     (err: Error, request: Request, response: Response, next: NextFunction) => {
@@ -35,8 +32,10 @@ app.use(
     }
 );
 
-app.use(cors(options));
+app.use(cors());
 
-app.listen(3333, () => console.log("Case stone server is running"));
+app.listen(process.env.PORT || 3333, () =>
+    console.log("Case stone server is running")
+);
 
 app.use(router);

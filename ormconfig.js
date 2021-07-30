@@ -1,12 +1,8 @@
 module.exports = {
     "type": "postgres",
-    "port": 5432,
-    "host": "localhost", 
-    "username": process.env.DB_USERNAME,
-    "password": process.env.DB_PASSWORD,
-    "database": process.env.DB, 
-    "migrations": ["./src/database/migrations/*.ts"],
-    "entities": ["./src/modules/**/entities/*.ts"],
+     "url": process.env.DATABASE_URL, 
+    "migrations": ["dist/database/migrations/*.js"],
+    "entities": ["dist/modules/**/entities/*.js"],
     "cli": {
       "migrationsDir": "./src/database/migrations"
     }
