@@ -48,8 +48,6 @@ marvelRoutes.get("/comicsId/:comic_id", async (req, res) => {
         const response = await axios.get(
             `https://gateway.marvel.com/v1/public/comics/${comic_id}?ts=1627477497&apikey=e727c9747111b13e942697e461e47a93&hash=8c04fa1fdae445d5e184376ceebd65a2`
         );
-        console.log(comic_id);
-        console.log(response.data);
 
         return res.json(response.data.data.results);
     } catch (err) {

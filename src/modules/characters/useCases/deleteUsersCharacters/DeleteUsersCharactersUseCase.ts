@@ -20,8 +20,6 @@ class DeleteUsersCharactersUseCase {
                 character_id,
             });
 
-        console.log(userCharacterExists);
-
         await this.usersCharactersRepository.delete(userCharacterExists);
     }
 }

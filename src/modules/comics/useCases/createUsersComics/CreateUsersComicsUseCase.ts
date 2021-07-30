@@ -18,8 +18,6 @@ class CreateUsersComicsUseCase {
                 user_id,
             });
 
-        console.log(userComicExists);
-
         if (userComicExists) {
             throw new AppError("Esse comic já foi favoritado");
         }

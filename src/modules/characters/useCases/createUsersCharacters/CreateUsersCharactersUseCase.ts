@@ -21,8 +21,6 @@ class CreateUsersCharactersUseCase {
                 character_id,
             });
 
-        console.log(userCharacterExists);
-
         if (userCharacterExists) {
             throw new AppError("Esse character já foi favoritado!");
         }
